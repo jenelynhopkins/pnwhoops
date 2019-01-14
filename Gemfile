@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'jquery-rails'
+gem 'file_validators'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
