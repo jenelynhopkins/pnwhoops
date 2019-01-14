@@ -1,0 +1,24 @@
+<% if article.image? %>
+ <div class="image_wrapper">
+   <%= image_tag article.image.url %>
+ </div>
+ <% end %>
+ <% form_for article do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, placeholder:, 'Title', class: 'form-control form-control-lg' %>
+  </div>
+
+  <div class="form-group">
+    <% f.text_area :body, placeholder: 'The body of your article goes here...', class: 'form-control form-control-lg, rows: '10' %>
+  </div>
+  <% if article.image? %>
+   <div class="form-check">
+     <label class="form-check-label">
+       <%= f.check_box :remove_image, class: 'form-check-input' %>
+       Remove image
+     </label>
+   </div>
+   <% end %>
+   <%= f.submit 'Create Article', class: 'btn btn-primary btn-lg' %>
+   <% end %>
+   

@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h1 class="display-3">Articles</h1>
+   <%= link_to 'Add Article', new_article_path, class: "btn btn-primary btn-lg" %>
+</div>
+
+<div class="articles-grid">
+  <% @rows.each do |row| %>
+  <div class="row">
+    <% row.each do |article| %>
+     <div class="col-md-4 col-sm-12">
+       <%= render 'article', article: article %>
+     </div>
+     <% end %>
+   </div>
+   <% end %>
+</div>
