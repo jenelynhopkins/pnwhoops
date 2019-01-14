@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.order('created_at DESC')
-    @rows = []
+    @rows = [[]]
     @articles.each do |article|
       if @rows[-1].length < 3
         @rows[-1] << article
@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
-  end 
+  end
 
 
 end
